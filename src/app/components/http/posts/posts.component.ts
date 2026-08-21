@@ -11,11 +11,11 @@ import { PostsService } from '../../../services/posts.service';
   styleUrl: './posts.component.css'
 })
 export class PostsComponent {
-postInteface=signal<PostInteface[]>([]);
+posts=signal<PostInteface[]>([]);
 postsService=inject(PostsService);
 ngOnInit() {
 this.postsService.getAllPost().subscribe((data)=>{
-  this.postInteface.set(data)
+  this.posts.set(data)
 })
 }
 }

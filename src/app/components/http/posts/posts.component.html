@@ -1,6 +1,9 @@
 <div class="mt-[30px]">
     <button class="border bg-white rounded-[10px] px-[15px] py-[10px] mb-[30px]">Yaratish</button>
     <div class="grid grid-cols-3 gap-[20px]">
-        <app-post-card></app-post-card>
+        @for (item of posts(); track item.id) {
+
+            <app-post-card [post]=""></app-post-card>
+        }
     </div>
 </div>
