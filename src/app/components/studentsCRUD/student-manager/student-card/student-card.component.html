@@ -1,0 +1,55 @@
+<div class="border rounded-[10px] p-[15px] bg-white">
+  <div class="flex items-center gap-[10px]">
+    <div
+      class="w-[40px] h-[40px] rounded-full bg-sky-200 flex items-center justify-center uppercase"
+    >
+      {{ student().name[0] }}{{ student().secondname[0] }}
+    </div>
+    <div class="">
+      <p class="text-[14px] font-semibold capitalize">
+        {{ student().name }} {{ student().secondname }}
+      </p>
+      <p class="text-[14px] mt-[-5px]">{{student().subject}}</p>
+    </div>
+  </div>
+  <div class="flex items-center gap-[10px] my-[10px]">
+    <p>Ball</p>
+    <div class="w-full h-[10px] rounded-full border">
+      <div
+        class="h-[10px] rounded-full"
+        [style.width.%]="student().grade"
+        [style.background]="getBarColo(student().grade)"
+      ></div>
+    </div>
+    <p class="">
+      {{ student().grade }}
+    </p>
+  </div>
+  <div class="border-t border-b py-[10px]">
+    <div class="flex items-center gap-[5px]">
+      <i class="pi pi-chart-bar"></i>
+      <p class="">
+        Daraja:
+        <span [style.background]="getBarColo(student().grade)"
+        class="rounded-[10px] px-[10px] py-[5px] text-white" 
+        >
+          {{getDegreeStudent(student().grade)}}
+        </span>
+      </p>
+    </div>
+  </div>
+  <div class="flex justify-center gap-[10px] mt-[10px]">
+    <button
+      class="text-[14px] flex items-center gap-[5px] p-[10px] border rounded-[10px] transition duration-300 hover:bg-stone-300/20"
+      (click)="selectStudent.emit(student())"
+    >
+      <i class="text-[14px] pi pi-pencil"></i>Tahrir
+    </button>
+    <button
+      class="text-[14px] flex items-center gap-[5px] p-[10px] border rounded-[10px] transition duration-300 hover:bg-stone-300/20"
+      (click)="deleteStudent(student().id)"
+    >
+      <i class="text-[14px] pi pi-trash"></i>O'chirish
+    </button>
+  </div>
+</div>

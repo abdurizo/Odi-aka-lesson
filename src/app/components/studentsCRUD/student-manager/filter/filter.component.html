@@ -1,0 +1,38 @@
+<div class="mt-[30px] grid grid-cols-4 gap-[10px]">
+  <button
+    class="py-[5px] px-[7px] border rounded-[5px] flex items-center gap-[5px] bg-white"
+  >
+    <input
+      type="text"
+      class="outline-none"
+      (input)="search.emit($any($event.target).value)"
+    />
+    <i class="pi pi-search"></i>
+  </button>
+  <select
+    name="Fan"
+    class="py-[5px] px-[7px] border rounded-[5px] outline-none"
+    (change)="subject.emit($any($event.target).value)"
+  >
+    <option value="all">Barcha fanlar</option>
+    <option value="Matimatika">Matimatika</option>
+    <option value="Fizika">Fizika</option>
+    <option value="Ingliz tili">Ingliz tili</option>
+  </select>
+  <select
+    name="baxo"
+    class="py-[5px] px-[7px] border rounded-[5px] outline-none"
+    (change)="grade.emit($any($event.target).value)"
+  >
+    <option value="all">Barcha baholar</option>
+    <option value="80+">80+</option>
+    <option value="79-65">79-65</option>
+    <option value="65-">65 dan past</option>
+  </select>
+  <button
+    class="py-[5px] px-[7px] border rounded-[5px] transition duration-300 bg-white hover:bg-stone-300/20"
+    (click)="openModal.emit()"
+  >
+    + Qo'shish
+  </button>
+</div>

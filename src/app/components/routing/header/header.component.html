@@ -1,0 +1,17 @@
+<header class="py-[20px]">
+  <nav class="flex gap-[20px] items-center">
+    <a
+      routerLink="home"
+      routerLinkActive="bg-white/70"
+      class="uppercase border border-white rounded-[10px] py-[10px] px-[15px] transition duration-300 hover:bg-white/50"
+      >home</a
+    >
+    <a
+      routerLink="users"
+      [queryParams]="{role:'admin'}"
+      routerLinkActive="bg-white/70"
+      class="uppercase border border-white rounded-[10px] py-[10px] px-[15px] transition duration-300 hover:bg-white/50"
+      >users</a
+    >
+  </nav>
+</header>

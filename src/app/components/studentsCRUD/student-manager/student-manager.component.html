@@ -1,0 +1,67 @@
+<div class="bg-stone-100 h-screen py-[30px]">
+  <div class="w-[950px] mx-auto">
+    <div class="grid grid-cols-3 gap-[25px]">
+      <div class="rounded-[10px] px-[15px] py-[10px] bg-white">
+        <p class="font-mono">Jami talabalar</p>
+        <h2 class="text-[25px]">{{ totalStudents() }}</h2>
+      </div>
+      <div class="rounded-[10px] px-[15px] py-[10px] bg-white">
+        <p class="font-mono">O'rtacha ball</p>
+        <h2 class="text-[25px]">{{ averageGrade() }}</h2>
+      </div>
+      <div class="rounded-[10px] px-[15px] py-[10px] bg-white">
+        <p class="font-mono">Eng yaxshi student</p>
+        <h2 class="text-[20px] uppercase">{{ bestStudent() }}</h2>
+      </div>
+    </div>
+    <app-filter
+      (openModal)="openModal()"
+      (search)="searchText.set($event)"
+      (subject)="selectedSubject.set($event)"
+      (grade)="selectedGrade.set($event)"
+    ></app-filter>
+    <h2 class="font-sans font-semibold mt-[30px]">Talabalar ro'yxati</h2>
+
+    <div class="grid grid-cols-4 gap-[20px] mt-[10px]">
+      @if(filterStudents().length > 0){
+        @for (student of filterStudents(); track student.id) {
+          <app-student-card
+            [student]="student"
+            (delete)="deleteStudent(student.id)"
+            (selectStudent)="onSelectStudent($event)"
+          ></app-student-card>
+        }
+      }
+      @else {
+        <p>Talaba yoq</p>
+      }
+    </div>
+  </div>
+</div>
+@if (modal()) {
+  <div
+    class="w-screen h-screen fixed inset-0 bg-black/70 flex items-center justify-center"
+  >
+    <div class="bg-stone-100 p-[20px] rounded-[10px]">
+      <div class="flex items-center justify-between">
+        <h3 class="">Yangi talaba</h3>
+        <button class="p-[5px]" (click)="closeModal()">
+          <i class="pi pi-times"></i>
+        </button>
+      </div>
+      @if (modal() === "add") {
+        <app-form
+          (formSubmit)="onFormSubmit()"
+          (closeModal)="closeModal()"
+        ></app-form>
+      }
+      @if (modal() === "edit") {
+        <app-form
+          (formSubmit)="onFormSubmit()"
+          (closeModal)="closeModal()"
+          [selectStudent]="selectStudent()"
+        ></app-form>
+      }
+    </div>
+  </div>
+}

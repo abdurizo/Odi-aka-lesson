@@ -1,0 +1,53 @@
+{
+  "student": [
+    {
+      "name": "abduJabor",
+      "secondname": "Movlonov",
+      "grade": 90,
+      "subject": "Matimatika",
+      "id": "878b"
+    },
+    {
+      "id": "9e1f",
+      "name": "Abdunabi ",
+      "secondname": "Mominov",
+      "grade": 75,
+      "subject": "Matimatika"
+    },
+    {
+      "id": "86bd",
+      "name": "Alisher",
+      "secondname": "Toxtasimov",
+      "grade": 80,
+      "subject": "Ingliz tili"
+    },
+    {
+      "id": "3404",
+      "name": "Палончи",
+      "secondname": "Палончиев",
+      "grade": 70,
+      "subject": "Ingliz tili"
+    },
+    {
+      "name": "Азиза",
+      "secondname": "Баба",
+      "grade": 65,
+      "subject": "Fizika",
+      "id": "18cd"
+    }
+  ],
+  "post":[
+    {
+      "id":"1",
+      "name":"Alisher",
+      "surname":"Malikov",
+      "biography":"1998 yil tugilga. Uzbekiston fuqorosi. Uylangan, 2 qizi bor"
+    },
+    {
+      "id":"2",
+      "name":"Alisher",
+      "surname":"Joraqulov",
+      "biography":"1998 yil tugilga. Uzbekiston fuqorosi. Uylangan, 2 qizi va 1 o'gli bor"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="rounded-[10px] border p-[30px] flex flex-col gap-[10px] cursor-pointer"
+>
+  <h2>Talaba ma'lumotlari formasi</h2>
+  <div class="flex flex-col">
+    <label for="name">Ism</label>
+    <input
+      type="text"
+      id="name"
+      class="border rounded-[10px] px-[7px] py-[5px]"
+      formControlName="name"
+    />
+  </div>
+  <div class="flex flex-col">
+    <label for="class">Sinif</label>
+    <select
+      id="class"
+      class="border rounded-[10px] px-[7px] py-[5px]"
+      formControlName="class"
+    >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+  <div class="flex flex-col cursor-pointer">
+    <label for="phone cursor-pointer">Telefon raqam</label>
+    <input
+      type="tel"
+      id="phone"
+      inputmode="numeric"
+      class="border rounded-[10px] px-[7px] py-[5px]"
+      formControlName="tel"
+    />
+  </div>
+  <div class="flex flex-col">
+    <p>Fan</p>
+    <label>
+      <input type="radio" formControlName="subject" value="Matematika" />
+      Matematika
+    </label>
+    <label>
+      <input type="radio" formControlName="subject" value="Ingliz tili" />
+      Ingliz tili
+    </label>
+
+    <label>
+      <input type="radio" formControlName="subject" value="Fizika" />
+      Fizika
+    </label>
+
+    <label>
+      <input type="radio" formControlName="subject" value="Informatika"/>
+      Informatika
+    </label>
+  </div>
+  <div class="flex flex-col">
+    <label for="explanation">Izoh</label>
+    <textarea
+      id="explanation"
+      class="border rounded-[10px] px-[7px] py-[5px]"
+      formControlName="explanation"
+    ></textarea>
+  </div>
+  <button type="submit">YUBORISH</button>
+</form>

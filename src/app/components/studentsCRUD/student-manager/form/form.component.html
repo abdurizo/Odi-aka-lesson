@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="(onSubmit())">
+  <div class="">
+    <p class="">Ismi</p>
+    <input
+      type="text"
+      class="border rounded-[10px] py-[5px] px-[10px]"
+      formControlName="name"
+    />
+  </div>
+  <div class="mt-[10px]">
+    <p class="">Familiya</p>
+    <input
+      type="text"
+      class="border rounded-[10px] py-[5px] px-[10px]"
+      formControlName="secondname"
+    />
+  </div>
+  <div class="mt-[10px]">
+    <p class="">Fan</p>
+    <select
+      name="Fan"
+      class="py-[5px] px-[7px] border rounded-[5px] outline-none"
+      formControlName="subject"
+    >
+      <option value="Matimatika">Matimatika</option>
+      <option value="Fizika">Fizika</option>
+      <option value="Ingliz tili">Ingliz tili</option>
+    </select>
+  </div>
+  <div class="mt-[10px]">
+    <p class="">Ball</p>
+    <input
+      type="number"
+      class="border rounded-[10px] py-[5px] px-[10px]"
+      formControlName="grade"
+    />
+  </div>
+  <div class="flex justify-between gap-[10px] mt-[10px]">
+    <button type="submit" class="py-[10px] px-[25px] bg-white border rounded-[10px]">Saqlash</button>
+    <button class="py-[10px] px-[25px] bg-white border rounded-[10px]" (click)="closeModal.emit()">Bekor</button>
+</div>
+</form>

@@ -1,0 +1,62 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="rounded-[10px] border p-[30px] flex flex-col gap-[10px]"
+>
+  <h2>Talablar: Ro'yxatdan o'tish formasi</h2>
+  <input
+    type="text"
+    formControlName="name"
+    class="border px-[7px] py-[5px]"
+    placeholder="NAME"
+  />
+  @if (form.controls.name.invalid && form.controls.name.touched) {
+    @if (form.controls.name.hasError("required")) {
+      <p>Имя обязательно</p>
+    }
+    @if (form.controls.name.hasError("minlength")) {
+      <p>Минимум 3 символа</p>
+    }
+  }
+  <input
+    type="text"
+    formControlName="secondName"
+    class="border px-[7px] py-[5px]"
+    placeholder="SECOND NAME"
+  />
+  @if (form.controls.secondName.invalid && form.controls.secondName.touched) {
+    @if (form.controls.name.hasError("required")) {
+      <p>Фамиля обязательно</p>
+    }
+    @if (form.controls.name.hasError("minlength")) {
+      <p>Минимум 3 символа</p>
+    }
+  }
+  <input
+    type="email"
+    formControlName="email"
+    class="border px-[7px] py-[5px]"
+    placeholder="EMAIL"
+  />
+  @if (form.controls.email.invalid && form.controls.email.touched) {
+    @if (form.controls.email.hasError("email")) {
+      <p>Это не email</p>
+    }
+    <p>Ввидите email</p>
+  }
+  <input
+    type="password"
+    class="border px-[7px] py-[5px]"
+    formControlName="password"
+    placeholder="password"
+  />
+  <input
+    type="password"
+    class="border px-[7px] py-[5px]"
+    formControlName="confirmationPas"
+    placeholder="password confirmation"
+  />
+  <button type="submit" class="border" [disabled]="form.invalid">
+    Отправить
+  </button>
+</form>

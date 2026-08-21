@@ -1,0 +1,48 @@
+<div class="flex justify-center items-center border h-screen">
+  <div
+    class="p-[20px] border rounded-[20px] flex justify-center items-center flex-col gap-[10px]"
+    [formGroup]="form"
+  >
+    <input
+      type="text"
+      class="block border p-[5px] shadow-md"
+      placeholder="son 1"
+      formControlName="num1"
+    />
+    <input
+      type="text"
+      class="block border p-[5px] shadow-md"
+      placeholder="son 2"
+      formControlName="num2"
+    />
+    <div class="flex items-center gap-[10px]">
+      <button
+        class="w-[40px] h-[40px] flex items-center justify-center shadow-xl border rounded-[5px] hover:bg-stone-100"
+        (click)="calculate('+')"
+      >
+        <i class="pi pi-plus"></i>
+      </button>
+      <button
+        class="w-[40px] h-[40px] flex items-center justify-center shadow-xl border rounded-[5px] hover:bg-stone-100"
+        (click)="calculate('-')"
+      >
+        <i class="pi pi-minus"></i>
+      </button>
+      <button
+        class="w-[40px] h-[40px] flex items-center justify-center shadow-xl border rounded-[5px] hover:bg-stone-100"
+        (click)="calculate('*')"
+      >
+        <i class="pi pi-asterisk"></i>
+      </button>
+      <button
+        class="w-[40px] h-[40px] flex items-center justify-center shadow-xl border rounded-[5px] hover:bg-stone-100"
+        (click)="calculate('/')"
+      >
+        <i class="">/</i>
+      </button>
+    </div>
+    <div class="mt-[20px] border-t w-full p-[10px]">
+      <p class="">Natija: <strong>{{ result() ?? "" }}</strong></p>
+    </div>
+  </div>
+</div>

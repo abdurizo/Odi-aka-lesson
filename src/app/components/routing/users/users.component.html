@@ -1,0 +1,11 @@
+@if (role === 'admin') {
+  <p>Adminlar ro‘yxati</p>
+}
+<div class="grid grid-cols-4 gap-[20px]">
+  @for (item of studentInterface(); track item.id) {
+    <a [routerLink]="['/routing/users',item.id]" class="block border border-white rounded-[10px] p-[15px]">
+      <p class="">ID: {{ item.id }}</p>
+      <p class="">Name: {{ item.name }}</p>
+    </a>
+  }
+</div>
