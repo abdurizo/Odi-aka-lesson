@@ -10,6 +10,6 @@ export class PostsService {
   private url = 'http://localhost:3000/post';
   /** */
   getAllPost(){
-    this.http.get<PostInteface[]>(this.url)
+    return this.http.get<PostInteface[]>(this.url)
   }
 }

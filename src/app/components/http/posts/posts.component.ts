@@ -14,6 +14,8 @@ export class PostsComponent {
 postInteface=signal<PostInteface[]>([]);
 postsService=inject(PostsService);
 ngOnInit() {
-this.postsService.getAllPost().subscribe((data)=>{})
+this.postsService.getAllPost().subscribe((data)=>{
+  this.postInteface.set(data)
+})
 }
 }
